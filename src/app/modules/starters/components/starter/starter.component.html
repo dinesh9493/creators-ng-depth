@@ -1,1 +1,17 @@
-<p>starter works!</p>
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let starter of starterList">
+      <div class="col-md-4 mb-5">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <h5 class="card-title">{{ starter.starterName }}</h5>
+            <p class="card-text">Price : {{ starter.price }}</p>
+            <a class="btn btn-primary" (click)="addToCart(starter)"
+              >Add To Cart</a
+            >
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

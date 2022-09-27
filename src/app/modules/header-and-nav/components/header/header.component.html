@@ -35,7 +35,7 @@
             class="nav-link"
             [ngClass]="{ active: activeRouterName.indexOf('cart') !== -1 }"
             (click)="navigate('/cart')"
-            >Cart</a
+            >Cart <sup>{{cartCount}}</sup></a
           >
         </li>
       </ul>

@@ -1,1 +1,17 @@
-<p>cart-items works!</p>
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let cartItem of cart">
+      <div class="col-md-4 mb-5">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <h5 class="card-title">{{ cartItem.starterName }}</h5>
+            <p class="card-text">Price : {{ cartItem.price }}</p>
+            <a class="btn btn-primary" (click)="removeFromCart(cartItem)"
+              >Remove from Cart</a
+            >
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
