@@ -1,0 +1,109 @@
+<div>
+  <form [formGroup]="ownerFormGroup">
+    <div>
+      <div>First Name :</div>
+      <div>
+        <input
+          type="text"
+          formControlName="firstName"
+          placeholder="First Name"
+        />
+      </div>
+      <div
+        class="error"
+        *ngIf="
+          isOwnerFormSubmitted &&
+          ownerFormGroup.controls['firstName'].errors !== null
+        "
+      >
+        <p *ngIf="ownerFormGroup.controls['firstName']['errors']['required']">
+          Please enter first name
+        </p>
+        <p *ngIf="ownerFormGroup.controls['firstName']['errors']['minlength']">
+          Minimum length should be 2
+        </p>
+      </div>
+    </div>
+    <div>
+      <div>Last Name :</div>
+      <div>
+        <input type="text" placeholder="Last Name" formControlName="lastName" />
+      </div>
+      <div
+        class="error"
+        *ngIf="
+          isOwnerFormSubmitted &&
+          ownerFormGroup.controls['lastName'].errors !== null
+        "
+      >
+        <p *ngIf="ownerFormGroup.controls['lastName']['errors']['required']">
+          Please enter last name
+        </p>
+      </div>
+    </div>
+    <div>
+      <div>Email :</div>
+      <div>
+        <input type="email" placeholder="Email" formControlName="email" />
+      </div>
+      <div
+        class="error"
+        *ngIf="
+          isOwnerFormSubmitted &&
+          ownerFormGroup.controls['email'].errors !== null
+        "
+      >
+        <p *ngIf="ownerFormGroup.controls['email']['errors']['required']">
+          Please enter Email
+        </p>
+        <p
+          *ngIf="
+            ownerFormGroup.controls['email']['errors']['email'] ||
+            ownerFormGroup.controls['email']['errors']['pattern']
+          "
+        >
+          Enter valid Email
+        </p>
+      </div>
+    </div>
+    <div>
+      <div>Mobile :</div>
+      <div>
+        <input type="tel" placeholder="Mobile" formControlName="mobile" />
+      </div>
+      <div
+        class="error"
+        *ngIf="
+          isOwnerFormSubmitted &&
+          ownerFormGroup.controls['mobile'].errors !== null
+        "
+      >
+        <p *ngIf="ownerFormGroup.controls['mobile']['errors']['required']">
+          Please enter mobile
+        </p>
+        <p
+          *ngIf="
+            ownerFormGroup.controls['mobile']['errors']['minlength'] ||
+            ownerFormGroup.controls['mobile']['errors']['maxlength']
+          "
+        >
+          Length should be 10
+        </p>
+        <p
+          *ngIf="
+            ownerFormGroup.controls['mobile']['value']['length'] == 10 &&
+            ownerFormGroup.controls['mobile']['errors']['pattern']
+          "
+        >
+          Only digits are allowed
+        </p>
+      </div>
+    </div>
+    <div>
+      <div></div>
+      <div>
+        <button type="button" (click)="submitOwnerForm()">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
