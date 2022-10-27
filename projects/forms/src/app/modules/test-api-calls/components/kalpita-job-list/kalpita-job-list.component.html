@@ -1,0 +1,11 @@
+<button type="button" (click)="goToEnquiry()">Need to Enquire for a JOB?</button>
+
+<div class="job-list-wrapper">
+  <ng-container *ngFor="let job of jobList">
+    <div class="job-details-container">
+      <h1>{{ job.JobTitle }}</h1>
+      <h2>{{ job.Location }}</h2>
+      <h3>{{ job.TechnicalExperties }}</h3>
+    </div>
+  </ng-container>
+</div>

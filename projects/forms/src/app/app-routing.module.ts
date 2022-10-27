@@ -21,6 +21,13 @@ const routes: Routes = [
         (m) => m.VehicleInsuranceModule
       ),
   },
+  {
+    path: 'test-api',
+    loadChildren: () =>
+      import('./modules/test-api-calls/test-api-calls.module').then(
+        (m) => m.TestApiCallsModule
+      ),
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

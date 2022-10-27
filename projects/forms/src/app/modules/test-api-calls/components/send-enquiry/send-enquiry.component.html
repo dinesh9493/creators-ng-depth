@@ -1,0 +1,13 @@
+<div>
+  <form [formGroup]="enquiryFormGroup">
+    <div><input type="text" placeholder="Name" formControlName="Name" /></div>
+    <div>
+      <input type="email" placeholder="Email" formControlName="Email" />
+    </div>
+    <div><textarea formControlName="Message"></textarea></div>
+  </form>
+  <div>
+    <button type="button" (click)="back()">Back to the Job List</button>
+    <button type="button" (click)="submitEnquiry()">Submit the Enquiry</button>
+  </div>
+</div>

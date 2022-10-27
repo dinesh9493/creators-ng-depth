@@ -1,1 +1,98 @@
-<p>property-info works!</p>
+<div>
+  <div>
+    <button (click)="addNewPropertyDetails()">Add new property details</button>
+  </div>
+
+  <div>
+    <form [formGroup]="multiOwnerGroup">
+      <div>Owner 1 Name :</div>
+      <div>
+        <input type="text" formControlName="owner1Name" />
+      </div>
+      <div>Owner 2 Name :</div>
+      <div>
+        <input type="text" formControlName="owner2Name" />
+      </div>
+      <div>Property Details :</div>
+      <div>
+        <div formArrayName="propertyList">
+          <ng-container
+            *ngFor="
+              let property of getPropertyFormArray.controls;
+              let i = index
+            "
+          >
+            <form [formGroupName]="i">
+              <div>
+                <div>Property Name :</div>
+                <div><input type="text" formControlName="propertyName" /></div>
+              </div>
+              <div>
+                <div>Property Area in Square Feet :</div>
+                <div>
+                  <input type="number" formControlName="propertyAreainSqFeet" />
+                </div>
+              </div>
+              <div>
+                <div>Property Value in Rupee :</div>
+                <div>
+                  <input type="number" formControlName="propertyValue" />
+                </div>
+              </div>
+              <div>
+                <div>Property Registration Number :</div>
+                <div>
+                  <input
+                    type="text"
+                    formControlName="propertyRegistrationNumber"
+                  />
+                </div>
+              </div>
+              <div>
+                <div></div>
+                <div>
+                  <button type="button" (click)="submitPropertyForm()">
+                    Submit Property Details
+                  </button>
+                </div>
+              </div>
+            </form>
+          </ng-container>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- <ng-container *ngFor="let propertyForm of propertyFormArray.controls">
+    <form [formGroup]="propertyForm">
+      <div>
+        <div>Property Name :</div>
+        <div><input type="text" formControlName="propertyName" /></div>
+      </div>
+      <div>
+        <div>Property Area in Square Feet :</div>
+        <div>
+          <input type="number" formControlName="propertyAreainSqFeet" />
+        </div>
+      </div>
+      <div>
+        <div>Property Value in Rupee :</div>
+        <div><input type="number" formControlName="propertyValue" /></div>
+      </div>
+      <div>
+        <div>Property Registration Number :</div>
+        <div>
+          <input type="text" formControlName="propertyRegistrationNumber" />
+        </div>
+      </div>
+      <div>
+        <div></div>
+        <div>
+          <button type="button" (click)="submitPropertyForm()">
+            Submit Property Details
+          </button>
+        </div>
+      </div>
+    </form>
+  </ng-container> -->
+</div>

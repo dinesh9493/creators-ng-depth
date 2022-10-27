@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EMAIL_PATTERN } from 'src/app/modules/shared/patterns/common.patterns';
 
 @Component({
   selector: 'app-owner-info',
@@ -25,7 +26,7 @@ export class OwnerInfoComponent implements OnInit {
         [
           Validators.required,
           Validators.email,
-          Validators.pattern(/^[^\s@]+@[^\s@]+\.[^\s@]+$/),
+          Validators.pattern(EMAIL_PATTERN),
         ],
       ],
       mobile: [
