@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { DhabaGuard } from './router-guard/dhaba.guard';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
       import('./modules/home-insurance/home-insurance.module').then(
         (m) => m.HomeInsuranceModule
       ),
+    canActivate: [DhabaGuard],
   },
   {
     path: 'vehicle',
