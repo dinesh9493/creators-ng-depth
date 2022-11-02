@@ -1,0 +1,44 @@
+<div>
+  <form [formGroup]="personalFormGroup">
+    <div>
+      <input type="text" placeholder="First Name" formControlName="firstName" />
+    </div>
+    <div>
+      <input type="text" placeholder="Last Name" formControlName="lastName" />
+    </div>
+    <div>
+      <input type="email" placeholder="Email" formControlName="email" />
+    </div>
+    <div>
+      <input type="tel" placeholder="Mobile" formControlName="mobile" />
+    </div>
+    <div>
+      <input
+        type="text"
+        placeholder="Street Addres"
+        formControlName="streetAddress"
+      />
+    </div>
+    <div>
+      <input type="text" placeholder="City" formControlName="city" />
+    </div>
+    <div>
+      <input type="text" placeholder="State" formControlName="state" />
+    </div>
+    <div>
+      <input type="text" placeholder="Zip Code" formControlName="zipCode" />
+    </div>
+    <div style="color: red">
+      <p>{{ personalFormGroup.controls.zipCode.errors | json }}</p>
+    </div>
+    <div>
+      <select formControlName="country">
+        <option value="">Select Country</option>
+        <option value="usa">USA</option>
+        <option value="canada">Canada</option>
+        <option value="uk">UK</option>
+        <option value="india">India</option>
+      </select>
+    </div>
+  </form>
+</div>

@@ -26,7 +26,6 @@ export class AppComponent implements OnInit, OnDestroy {
     this._subscriptionList.add(
       this._router.events.subscribe({
         next: (routerEvent: any) => {
-          console.log(routerEvent);
         },
         error: (routerEvent: any) => {},
       })
